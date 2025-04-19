@@ -1,0 +1,11 @@
+---- Requirements ----
+- Make sure gns3 is closed
+- Execute the following commands:
+docker rm $(docker ps -aq) # Delete all containers to avoid conflicts
+docker rmi $(docker image ls -aq) # Delete all images to avoid conflicts
+docker compose --project-name badass pull # Pull all images
+docker compose --project-name badass build # Build all images
+- Open GNS3
+- Open the project and start all the containers using the play button
+
+- Repeat all these steps between each configuration to ensure no conflicts

@@ -1,0 +1,6 @@
+services:
+  host_jmaia:
+    image: alpine:3.21.3
+    entrypoint: tail -f /dev/null
+  routeur_jmaia:
+    build: docker-with-frrouting
