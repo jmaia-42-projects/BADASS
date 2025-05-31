@@ -1,0 +1,8 @@
+FROM frrouting/frr:v8.4.0
+
+RUN apk add --no-cache busybox
+
+RUN sed -i "s/^bgpd=no/bgpd=yes/" /etc/frr/daemons
+RUN sed -i "s/^ripd=no/zebra=yes/" /etc/frr/daemons
+RUN sed -i "s/^ospfd=no/ripd=yes/" /etc/frr/daemons
+RUN sed -i "s/^isisd=no/ospfd=yes/" /etc/frr/daemons
